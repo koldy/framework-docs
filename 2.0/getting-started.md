@@ -22,13 +22,11 @@ apt-get install php7.1-fpm php7.1-cli php7.1-common php7.1-mysql php7.1-mbstring
 Setting up all technologies you need on your computer can take a lot of time. To speed up this process, we
 recommend [Vagrant](https://www.vagrantup.com) virtual machine which makes the whole process much easier.
 
-The basic boilerplate you can use is `backend-boilerplate` which is project ready for you to test or start your own
-project. To get it, clone the project and start Vagrant machine in your terminal:
+The basic boilerplate you can use is [boilerplate](https://github.com/koldy/boilerplate) which is project ready for you
+to test or start your own project. To get it, run the following command in your terminal:
 
 ```
-{{frameworkBoilerplateCloneCommand:2.0}}
-cd boilerplate
-./init.sh
+{{frameworkBoilerplateCloneCommand:2.0}} && cd boilerplate && ./init.sh
 ```
 
 After it's done, open http://localhost:5000
