@@ -14,7 +14,7 @@ The system itself has the following requirements:
 If you're using Linux Ubuntu or Debian, you can use this:
 
 ```bash
-apt-get install php7.1-fpm php7.1-cli php7.1-common php7.1-mysql php7.1-mbstring php7.1-pgsql php7.1-sqlite php7.1-gd php7.1-curl
+apt-get install php7.1-fpm php7.1-cli php7.1-common php7.1-mysql php7.1-mbstring php7.1-pgsql php7.1-sqlite php7.1-gd php7.1-curl php7.1-bcmath php7.1-xml
 ```
 
 ## Development Environment
@@ -26,7 +26,7 @@ The basic boilerplate you can use is [boilerplate](https://github.com/koldy/boil
 to test or start your own project. To get it, run the following command in your terminal:
 
 ```
-{{frameworkBoilerplateCloneCommand:2.0}} && cd boilerplate && ./init.sh
+{{frameworkBoilerplateCloneCommand:dev}} && cd boilerplate && ./init.sh
 ```
 
 After it's done, open http://localhost:5000
