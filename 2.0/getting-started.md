@@ -31,6 +31,9 @@ to test or start your own project. To get it, run the following command in your 
 
 After it's done, open http://localhost:5000
 
+Vagrant VM will install PHP 7.1, Postgres and Nginx. It'll adjust configuration for development and it'll put web server
+and PHP logs in `logs` folder in your project, so it's easier to troubleshoot things during development.
+
 ## Installation
 
 Koldy is shipped with `DefaultRoute` class that requires your web server to handle URL rewrites.
