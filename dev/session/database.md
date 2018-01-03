@@ -60,7 +60,7 @@ CREATE TABLE session
 (
 	id varchar(128) not null primary key,
 	time integer not null,
-	data text not null
+	data bytea not null
 );
 
 CREATE INDEX last_activity_for_gc ON session (time);
