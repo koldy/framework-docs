@@ -128,6 +128,16 @@ $validator = Validator::create([
 ]);
 ```
 
+## endsWith
+
+Verifies that value ends with the string from parameter:
+
+```php
+$validator = Validator::create([
+	'phone' => 'endsWith:00', // phone parameter must end with "00"
+]);
+```
+
 ## exists
 
 This validator checks if given value exists in targeted table in database. It'll perform simple
@@ -282,6 +292,19 @@ Verifies that value is the URL *slug* containing only small characters **a-z**, 
 ```php
 $validator = Validator::create([
 	'param' => 'slug'
+]);
+```
+
+You may check the [slug helper](../util.md#slug) for more info.
+
+## startsWith
+
+Verifies that value starts with the string from parameter:
+
+```php
+$validator = Validator::create([
+	'name' => 'startsWith:John',
+	'phone' => 'startsWith:+', // phone parameter must start with "+"
 ]);
 ```
 

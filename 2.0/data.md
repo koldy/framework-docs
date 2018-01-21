@@ -33,6 +33,10 @@ Gets all data set as array.
 
 Accepts array as first parameter. This array should be associative array, not numeric.
 
+### addData
+
+Accepts array as first parameter and adds that array to already existing data using [array_merge](http://php.net/manual/en/function.array-merge.php) function.
+
 ### set
 
 Sets the value under given key. First parameter is key name, second parameter can be any type.
