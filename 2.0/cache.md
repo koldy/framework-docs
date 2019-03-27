@@ -81,7 +81,8 @@ Cache engines you can use within this framework are:
 1. File storage: [\Koldy\Cache\Adapter\Files](cache/files.md)
 2. Memcached: [\Koldy\Cache\Adapter\Memcached](cache/memcached.md)
 3. Database: [\Koldy\Cache\Adapter\Db](cache/database.md)
-4. No where: [\Koldy\Cache\Adapter\DevNull](cache/dev-null.md)
+4. Runtime: [\Koldy\Cache\Adapter\Runtime](cache/runtime.md)
+5. No where: [\Koldy\Cache\Adapter\DevNull](cache/dev-null.md)
 
 The `DevNull` engine will be used internally by framework in case when you don't configure any cache engine, but
 still decide to use methods from `Cache` class, so instead of throwing exceptions, your project will continue to work,
