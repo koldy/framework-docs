@@ -63,10 +63,11 @@ try {
 	Db::commit();
 } catch (\Koldy\Db\Exception $e) {
 	Db::rollBack();
+	throw $e;
 }
 ```
 
-Or if you do it on other connection:
+Or if you do it on other database connection:
 
 ```
 try {
@@ -75,5 +76,39 @@ try {
 	Db::getAdapter('admin')->commit();
 } catch (\Koldy\Db\Exception $e) {
 	Db::getAdapter('admin')->rollBack();
+	throw $e;
+}
+```
+
+### Nesting Database Transactions
+
+When your project grows, there's usually a lot of big procedures that execute a lot of small pieces of code. For example,
+let's say that each small piece of code has one try/catch transaction block inside, but you want to run all the pieces
+and you want to rollback the database transaction if one of the pieces fail.
+
+Database would deny these queries because it's not possible to run nested SQL transactions. That's why there's implementation
+in framework that allows you that: nesting database transactions one into another. Here's how it works:
+
+```
+try {
+	Db::getAdapter()->beginTransaction();
+	
+	// some code...
+	
+	try {
+  	Db::beginTransaction(); // <- there's already active transaction so this won't be executed
+  	
+  	// some other code...
+  	
+  	Db::commit(); // <- since there's already active transaction, this won't be commited
+  } catch (\Koldy\Db\Exception $e) {
+  	Db::rollBack(); // <- since there's active transaction, this rollBack() won't be executed
+  	throw $e; // <- this is important because it'll be caught by "parent" transaction block
+  }
+	
+	Db::getAdapter()->commit(); // <- if it's all good, this will be executed
+} catch (\Koldy\Db\Exception $e) { // <- if nested try/catch block threw something, it'll be caught here
+	Db::getAdapter()->rollBack();
+	throw $e;
 }
 ```
