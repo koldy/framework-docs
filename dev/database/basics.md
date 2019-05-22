@@ -96,15 +96,15 @@ try {
 	// some code...
 	
 	try {
-  	Db::beginTransaction(); // <- there's already active transaction so this won't be executed
-  	
-  	// some other code...
-  	
-  	Db::commit(); // <- since there's already active transaction, this won't be commited
-  } catch (\Koldy\Db\Exception $e) {
-  	Db::rollBack(); // <- since there's active transaction, this rollBack() won't be executed
-  	throw $e; // <- this is important because it'll be caught by "parent" transaction block
-  }
+		Db::beginTransaction(); // <- there's already active transaction so this won't be executed
+
+		// some other code...
+
+		Db::commit(); // <- since there's already active transaction, this won't be commited
+	} catch (\Koldy\Db\Exception $e) {
+		Db::rollBack(); // <- since there's active transaction, this rollBack() won't be executed
+		throw $e; // <- this is important because it'll be caught by "parent" transaction block
+	}
 	
 	Db::getAdapter()->commit(); // <- if it's all good, this will be executed
 } catch (\Koldy\Db\Exception $e) { // <- if nested try/catch block threw something, it'll be caught here
