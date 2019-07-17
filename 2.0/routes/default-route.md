@@ -199,5 +199,5 @@ To have the proper routes to assets, first properly configure [mandatory configu
 Then, when you know the keys from that config, you can simply use:
 
 ```php
-echo Route::asset('dev', 'images/logo.png'); // returns "http://localhost:3000/static/images/logo.png"
+echo Route::asset('images/logo.png', 'dev'); // returns "http://localhost:3000/static/images/logo.png"
 ```
