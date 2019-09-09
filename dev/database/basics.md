@@ -112,3 +112,5 @@ try {
 	throw $e;
 }
 ```
+
+In simple cases, one database transaction is usually more than enough, but when you have a huge system, nested transactions are big help.
