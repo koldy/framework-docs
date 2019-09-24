@@ -31,12 +31,16 @@ return [
 	'cookie_domain' => '',
 	'cookie_secure' => false,
 	'session_name' => 'koldy',
-	'http_only' => true
+	'http_only' => true,
+	'sid_length' => 32,
+	'sid_bits_per_character' => 4
 ];
 ```
 
 Session class requires another configuration file located in `/configs/session.php` where you can configure everything
-related sessions, like the cookie settings or where you want to store session information on server.
+related sessions, like the cookie settings or where you want to store session information on server. Use `sid_length`
+and `sid_bits_per_character` to configure session ID generator. Read more in PHP docs for [sid_length](https://www.php.net/manual/en/session.configuration.php#ini.session.sid-length)
+and [sid_bits_per_character](https://www.php.net/manual/en/session.configuration.php#ini.session.sid-bits-per-character).
 
 Boilerplate we ship will always use PHP's default session settings, which is *one file per session* philosophy. If your
 project gets higher traffic, you'll need to think about moving session storage from files to something faster, like

@@ -16,7 +16,9 @@ return [
   'cookie_domain' => '',
   'cookie_secure' => false,
   'session_name' => 'koldy',
-  'http_only' => true
+  'http_only' => true,
+  'sid_length' => 32,
+  'sid_bits_per_character' => 4
 ];
 ```
 

@@ -15,7 +15,9 @@ return [
   'cookie_domain' => '',
   'cookie_secure' => false,
   'session_name' => 'koldy',
-  'http_only' => true
+  'http_only' => true,
+  'sid_length' => 32,
+  'sid_bits_per_character' => 4
 ];
 ```
 
@@ -45,7 +47,7 @@ Check [log documentation](../log.md) for more info.
 
 ```mysql
 CREATE TABLE `session` (
-  `id` varchar(40) NOT NULL,
+  `id` varchar(255) NOT NULL,
   `time` int(10) unsigned NOT NULL,
   `data` text CHARACTER SET utf16 NOT NULL,
   PRIMARY KEY (`id`),
@@ -58,7 +60,7 @@ CREATE TABLE `session` (
 ```postgresql
 CREATE TABLE session
 (
-	id varchar(128) not null primary key,
+	id varchar(255) not null primary key,
 	time integer not null,
 	data bytea not null
 );
