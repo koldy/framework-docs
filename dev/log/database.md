@@ -56,21 +56,21 @@ CREATE INDEX i_log_level ON log(level);
 
 ## Options
 
-### Log
+### log
 
 This is standard array of all log message levels that you want to forward to this logger.
 
-### Adapter
+### adapter
 
 This is [database adapter name](../database.md#configuration) that will be used for connecting to database.
 
-### Table
+### table
 
 This is the name of table where log records will be inserted.
 
 ## Additional Options
 
-### File Name Function
+### get_insert_fn
 
 `get_insert_fn` should be function that accepts instance of [\Koldy\Log\Message](../log.md#log-elements) and
 `options` array. This function should return instance of [Insert](../database/insert-query-builder.md) or `null` if

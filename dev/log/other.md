@@ -27,17 +27,17 @@ So, if you need to send log message(s) over HTTP, use this logger.
 
 ## Options
 
-### Log
+### log
 
 This is standard array of all log message levels that you want to forward to this logger.
 
-### Send Immediately
+### send_immediately
 
 If `send_immediately` is set to `true`, then `exec` will be immediately executed. If you call `Log::error()` multiple times
 within one request, then function defined on `exec` will be executed multiple times. That's why we recommend this to be
 `true` only in [CLI](../cli.md) environment where such setting is useful, and `false` for HTTP requests.
 
-### Exec
+### exec
 
 The `exec` part is function which accepts one parameter which can be instance of `\Koldy\Log\Message` or array of
 `\Koldy\Log\Message` instances. If you set `send_immediately` to `true`, then only one message will be passed to `exec`

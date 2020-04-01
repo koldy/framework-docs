@@ -21,11 +21,11 @@ want to use any external tracking service, but still want to be alerted when som
 
 ## Options
 
-### Log
+### log
 
 This is standard array of all log message levels that you want to forward to this logger.
 
-### To
+### to
 
 This is the email address where reports should be sent. If you want to send an email to multiple address, simply define
 this as array:
@@ -34,11 +34,11 @@ this as array:
 'to' => ['address1@email.com', 'address2@email.com']
 ```
 
-### Adapter
+### adapter
 
 This is the name of adapter from [mail configuration](../mail.md#configuration) which will be used to send an email.
 
-### Send Immediately
+### send_immediately
 
 If `send_immediately` is set to `true`, then email will be sent immediately. If you call `Log::emergency()` multiple times
 within one request, then multiple emails will be sent. That's why we recommend this to be `true` only in

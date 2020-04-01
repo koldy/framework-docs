@@ -19,11 +19,11 @@ in your terminal.
 
 ## Options
 
-### Log
+### log
 
 This is standard array of all log message levels that you want to forward to this logger.
 
-### Dump
+### dump
 
 This is standard array of what you want to see when [CLI script](../cli.md) is done.
 
