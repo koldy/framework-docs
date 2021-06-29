@@ -26,7 +26,7 @@ The basic boilerplate you can use is [boilerplate](https://github.com/koldy/boil
 to test or start your own project. To get it, run the following command in your terminal:
 
 ```
-{{frameworkBoilerplateCloneCommand:2.0}} && cd boilerplate && ./init.sh
+{{frameworkBoilerplateCloneCommand:2.2}} && cd boilerplate && ./init.sh
 ```
 
 After it's done, open http://localhost:5000
