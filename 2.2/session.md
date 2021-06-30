@@ -30,6 +30,7 @@ return [
 	'cookie_path' => '/',
 	'cookie_domain' => '',
 	'cookie_secure' => false,
+	'cookie_samesite' => 'Lax',
 	'session_name' => 'koldy',
 	'http_only' => true
 ];
