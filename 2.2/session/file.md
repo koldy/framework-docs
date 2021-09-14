@@ -6,7 +6,7 @@ defined, then `/storage/session` folder will be used. Final config example shoul
 
 ```php
 return [
-	'adapter_class' => '\Koldy\Session\Driver\File',
+	'adapter_class' => '\Koldy\Session\Adapter\File',
 	'options' => [
 		'session_save_path' => '/var/tmp/session'
 	],
