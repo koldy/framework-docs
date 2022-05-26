@@ -7,7 +7,7 @@ You can use this class as method's argument type.
 Example:
 
 ```
-$url = new \Koldy\Url('https://koldy.net/framework/docs/2.0/url?page=1#hash-value');
+$url = new \Koldy\Url('https://koldy.net/framework/docs/3.0/url?page=1#hash-value');
 ```
 
 | method | result |
@@ -17,7 +17,7 @@ $url = new \Koldy\Url('https://koldy.net/framework/docs/2.0/url?page=1#hash-valu
 | `$url->getPort()` | Throws exception because port is not set |
 | `$url->getUser()` | Throws exception because user is not set |
 | `$url->getPass()` | Throws exception because pass is not set |
-| `$url->getPath()` | `/framework/docs/2.0/url` |
+| `$url->getPath()` | `/framework/docs/3.0/url` |
 | `$url->getQuery()` | `page=1` |
 | `$url->getFragment()` | `hash-value` |
-| `$url->getUrl()` | `https://koldy.net/framework/docs/2.0/url?page=1#hash-value` |
+| `$url->getUrl()` | `https://koldy.net/framework/docs/3.0/url?page=1#hash-value` |

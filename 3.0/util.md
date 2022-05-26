@@ -44,6 +44,8 @@ echo Util::cleanString($string); // prints: "This Really made my day"
 
 Returns `true` if string given as first parameter ends with the string given as second parameter.
 
+Please note that you can use PHP's native __str_ends_with()__ function instead.
+
 ## isAssociativeArray
 
 Returns `true` if given array is associative array.
@@ -100,6 +102,8 @@ This method does much more than regular lowercase, dash instead of space and etc
 ## startsWith
 
 Returns `true` if string given as first parameter starts with the string given as second parameter.
+
+Please note that you can use PHP's native __str_starts_with()__ function instead.
 
 ## str2hex
 

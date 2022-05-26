@@ -41,7 +41,7 @@ To override framework's assumptions from above, you should define `protected sta
 ### Database Table Name
 
 ```
-protected static $table = 'user';
+protected static string | null $table = 'user';
 ```
 
 If you define `$table`, framework will know that it should use table named `user` and not `db_user`.
@@ -52,7 +52,7 @@ If you define `$table`, framework will know that it should use table named `user
 If you take a look on [database configuration example](../database.md#configuration) and you want your model to connect to `admin` database, then simply add:
 
 ```
-protected static $adapter = 'admin';
+protected static string | null $adapter = 'admin';
 ```
 
 
@@ -61,13 +61,13 @@ protected static $adapter = 'admin';
 If your primary key column is not named `id`, then define its name like:
 
 ```
-protected static $primaryKey = 'user_id';
+protected static string | array $primaryKey = 'user_id';
 ```
 
 If you're using multi-column primary key in your database table, then define it like array:
 
 ```
-protected static $primaryKey = ['user_id', 'group_id'];
+protected static string | array $primaryKey = ['user_id', 'group_id'];
 ```
 
 
@@ -76,7 +76,7 @@ protected static $primaryKey = ['user_id', 'group_id'];
 Framework always think you have auto-increment primary key because this is common behaviour in most cases so you should define this in any other case.
 
 ```
-protected static $autoIncrement = false;
+protected static bool | string $autoIncrement = false;
 ```
 
 Set `$autoIncrement` to `false` if there's no auto-increment column in your table. If your table has multi-column primary key, you should still set `$autoIncrement` to `false`.
@@ -87,7 +87,7 @@ Set `$autoIncrement` to `false` if there's no auto-increment column in your tabl
 When working with PostgreSQL, creating *auto increment* column creates named sequence which is by default formatted like `[tableName]_[pkName]_seq`. This name has to be used when fetching last increment ID. Framework handles this for you, but if you ever encounter on case where you can't use standard sequence name, then sequence name should be defined as:
 
 ```
-protected static $autoIncrement = 'my_pk_seq';
+protected static bool | string $autoIncrement = 'my_pk_seq';
 ```
 
 If your sequence is not named by standard and you don't define its name with `$autoIncrement`, then you won't be able to get primary key value when you insert new record using `Model::create()` method.
@@ -108,10 +108,10 @@ use Koldy\Db\Model;
 
 class User extends Model
 {
-    protected static $table = 'user';
-    protected static $adapter = 'admin';
-    protected static $primaryKey = 'id';
-    protected static $autoIncrement = true;
+    protected static string | null $table = 'user';
+    protected static string | null  $adapter = 'admin';
+    protected static string | array  $primaryKey = 'id';
+    protected static string | bool $autoIncrement = true;
 
     public function getId(): int
     {

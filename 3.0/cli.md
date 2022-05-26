@@ -59,3 +59,8 @@ Then you can fetch the value of your parameter with:
 ```
 Cli::getParameter('my-parameter'); // it will return "this is cool"
 ```
+
+## Working with PHP versions
+
+The `koldy` script is located in your project's root and by default, it calls `php` interpreter. If you're running multiple PHP versions on the same server, then you should probably want to change
+the interpreter call in `koldy` shell script. So, if you want to run your CLI scripts with PHP 8.1, then use `php8.1` for PHP 8.1, `php7.4` for 7.4 and etc.

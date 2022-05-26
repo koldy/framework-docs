@@ -4,7 +4,7 @@
 
 This page is about HTTP requests that are going from your application to some remote server.
 
-To perform such HTTP request, this framework is using cURL so you need to have `php7.1-curl` extension installed on your
+To perform such HTTP request, this framework is using cURL so you need to have `php8.1-curl` extension installed on your
 system.
 
 All PHP classes are within the `\Koldy\Http` namespace, so in order for example to work on this page, you have to:

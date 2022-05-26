@@ -39,8 +39,8 @@ Here are currently available mail adapters:
 1. [Simulate](mail/simulate.md) - sends email content to log, useful for development only
 2. [File](mail/file.md) - sends content of email to file, useful for development only
 3. [native Mail](mail/mail.md) - uses PHP's native [mail() function](http://php.net/manual/en/function.mail.php)
-4. [PHPMailer](mail/phpmailer.md) - uses popular [PHPMailer](https://github.com/PHPMailer/PHPMailer) package
 
+If you need PHPMailer support, check [koldy/phpmailer](https://github.com/koldy/phpmailer) package.
 
 ## Sending Emails
 
